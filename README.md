@@ -1,8 +1,8 @@
-# BITBOX SDK
+# BITBOX JS
 This is a pure JavaScript fork of
 the [BITBOX SDK](https://github.com/Bitcoin-com/bitbox-sdk) maintained
-by Bitcoin.com. It was forked 5/9/19. This fork of the repository will remove
-babel and typescript as dependencies, making the code base pure JavaScript.
+by Bitcoin.com. It was forked 5/9/19. This fork removes bable, typescript, and
+flow as dependencies. The code base is pure JavaScript, tested against node.js v10+
 This removes the time-lag in compiling the library and also means that error messages
 will indicate the actual lines of code (helpful), rather than lines in the
 compiled output (less helpful).
@@ -14,6 +14,10 @@ these marginalized developers. This fork will be maintained by
 me ([Chris Troutner](https://memo.cash/profile/1NpYaazpQ26KrMTeFf66zVKy6x9KzcLgTA)) as
 a hobby. There will most likely be a big lag when it comes to porting new
 features in BITBOX to this repository.
+
+Whereas BITBOX SDK has a big focus on integrating the latest features in the
+the ecosystem, this BITBOX JS fork will remain relatively stable, integrating
+new features at a much slower pace.
 
 ## Original Documentation:
 
@@ -28,7 +32,8 @@ Extensive documentation available at:
 
 I will periodically publish IPFS releases of this repository, including all
 dependencies in the `node_modules` folder. This ensures working copies of this
-repository can be retrieved in case there is any drift in dependency files.
+repository can be retrieved in case there is any drift in dependency files, or
+if dependencies are pulled from npm or GitHub.
 
 - Initial release on 5/9/2019
   - without node_modules folder: [QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG](ipfs://QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG) (4 MB)
