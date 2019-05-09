@@ -1,4 +1,5 @@
-import axios from "axios"
+const axios = require("axios")
+
 class Util {
   constructor(restURL) {
     this.restURL = restURL
@@ -35,4 +36,4 @@ class Util {
   }
 }
 
-export default Util
+module.exports = Util

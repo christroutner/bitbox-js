@@ -1,4 +1,4 @@
-import schnorr from "bip-schnorr"
+const schnorr = require("bip-schnorr")
 
 class Schnorr {
   constructor(restURL) {
@@ -96,4 +96,4 @@ class Schnorr {
   }
 }
 
-export default Schnorr
+module.exports = Schnorr

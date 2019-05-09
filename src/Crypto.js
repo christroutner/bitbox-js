@@ -1,5 +1,5 @@
-import randomBytes from "randombytes"
-import Bitcoin from "bitcoincashjs-lib"
+const randomBytes = require("randombytes")
+const Bitcoin = require("bitcoincashjs-lib")
 
 class Crypto {
   static sha256(buffer) {
@@ -23,4 +23,4 @@ class Crypto {
   }
 }
 
-export default Crypto
+module.exports = Crypto

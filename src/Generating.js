@@ -1,4 +1,5 @@
-import axios from "axios"
+const axios = require("axios")
+
 class Generating {
   constructor(restURL) {
     this.restURL = restURL
@@ -19,4 +20,4 @@ class Generating {
   }
 }
 
-export default Generating
+module.exports = Generating

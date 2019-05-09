@@ -1,5 +1,5 @@
-import Bitcoin from "bitcoincashjs-lib"
-import axios from "axios"
+const Bitcoin = require("bitcoincashjs-lib")
+const axios = require("axios")
 
 class Transaction {
   constructor(restURL) {
@@ -37,4 +37,4 @@ class Transaction {
   }
 }
 
-export default Transaction
+module.exports = Transaction

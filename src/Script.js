@@ -1,5 +1,5 @@
-import Bitcoin from "bitcoincashjs-lib"
-import opcodes from "bitcoincash-ops"
+const Bitcoin = require("bitcoincashjs-lib")
+const opcodes = require("bitcoincash-ops")
 
 class Script {
   constructor() {
@@ -63,4 +63,4 @@ class Script {
   }
 }
 
-export default Script
+module.exports = Script

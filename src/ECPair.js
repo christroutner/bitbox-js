@@ -1,5 +1,5 @@
-import Bitcoin from "bitcoincashjs-lib"
-import coininfo from "coininfo"
+const Bitcoin = require("bitcoincashjs-lib")
+const coininfo = require("coininfo")
 
 class ECPair {
   static setAddress(address) {
@@ -50,4 +50,4 @@ class ECPair {
   }
 }
 
-export default ECPair
+module.exports = ECPair

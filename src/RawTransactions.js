@@ -1,4 +1,5 @@
-import axios from "axios"
+const axios = require("axios")
+
 class RawTransactions {
   constructor(restURL) {
     this.restURL = restURL
@@ -136,4 +137,4 @@ class RawTransactions {
   }
 }
 
-export default RawTransactions
+module.exports = RawTransactions

@@ -74,4 +74,4 @@ class Wallet {
   }
 }
 
-export default Wallet
+module.exports = Wallet

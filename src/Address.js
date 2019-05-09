@@ -1,7 +1,7 @@
-import axios from "axios"
-import Bitcoin from "bitcoincashjs-lib"
-import cashaddr from "cashaddrjs"
-import coininfo from "coininfo"
+const axios = require("axios")
+const Bitcoin = require("bitcoincashjs-lib")
+const cashaddr = require("cashaddrjs")
+const coininfo = require("coininfo")
 
 class Address {
   constructor(restURL) {
@@ -387,4 +387,4 @@ class Address {
   }
 }
 
-export default Address
+module.exports = Address

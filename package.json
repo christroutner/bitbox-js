@@ -8,8 +8,8 @@
   ],
   "main": "src/BITBOX",
   "scripts": {
-    "test": "mocha --timeout 30000 --require babel-core/register test/unit",
-    "test:integration": "mocha --timeout 30000 --require babel-core/register test/integration",
+    "test": "mocha --timeout 30000 test/unit",
+    "test:integration": "mocha --timeout 30000 test/integration",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "license": "MIT",
@@ -21,10 +21,6 @@
   "dependencies": {
     "assert": "^1.4.1",
     "axios": "^0.17.1",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0",
     "bc-bip68": "^1.0.5",
     "bch-wallet-bridge.js": "github:web3bch/bch-wallet-bridge.js#master",
     "bigi": "^1.4.2",

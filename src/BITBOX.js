@@ -1,24 +1,24 @@
 // local deps
-import BitcoinCash from "./BitcoinCash"
-import Crypto from "./Crypto"
-import Util from "./Util"
-import Block from "./Block"
-import Blockchain from "./Blockchain"
-import Control from "./Control"
-import Generating from "./Generating"
-import Mining from "./Mining"
-import RawTransactions from "./RawTransactions"
-import Mnemonic from "./Mnemonic"
-import Address from "./Address"
-import HDNode from "./HDNode"
-import Transaction from "./Transaction"
-import TransactionBuilder from "./TransactionBuilder"
-import ECPair from "./ECPair"
-import Script from "./Script"
-import Price from "./Price"
-import Socket from "./Socket"
-import Wallet from "./Wallet"
-import Schnorr from "./Schnorr"
+const BitcoinCash = require("./BitcoinCash")
+const Crypto = require("./Crypto")
+const Util = require("./Util")
+const Block = require("./Block")
+const Blockchain = require("./Blockchain")
+const Control = require("./Control")
+const Generating = require("./Generating")
+const Mining = require("./Mining")
+const RawTransactions = require("./RawTransactions")
+const Mnemonic = require("./Mnemonic")
+const Address = require("./Address")
+const HDNode = require("./HDNode")
+const Transaction = require("./Transaction")
+const TransactionBuilder = require("./TransactionBuilder")
+const ECPair = require("./ECPair")
+const Script = require("./Script")
+const Price = require("./Price")
+const Socket = require("./Socket")
+const Wallet = require("./Wallet")
+const Schnorr = require("./Schnorr")
 
 class BITBOX {
   constructor(config) {

@@ -1,4 +1,5 @@
-import axios from "axios"
+const axios = require("axios")
+
 class Price {
   async current(currency = "usd") {
     try {
@@ -13,4 +14,4 @@ class Price {
   }
 }
 
-export default Price
+module.exports = Price
