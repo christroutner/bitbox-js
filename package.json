@@ -1,6 +1,6 @@
 {
   "name": "bitbox-js",
-  "version": "1.0.0",
+  "version": "7.0.0",
   "description": "BITBOX JavaScript SDK for Bitcoin Cash",
   "author": "Chris Troutner <chris.troutner@gmail.com>",
   "contributors": [
