@@ -19,6 +19,15 @@ Whereas BITBOX SDK has a big focus on integrating the latest features in the
 the ecosystem, this BITBOX JS fork will remain relatively stable, integrating
 new features at a much slower pace.
 
+Major features of this fork:
+- Pure, standard, uncompiled JavaScript
+- [Semantic Release](https://github.com/semantic-release/semantic-release) for
+continuous delivery using semantic versioning.
+- [Greenkeeper](https://greenkeeper.io/) automatic dependency management for
+automatically maintaining the latest, most secure dependencies.
+- [IPFS uploads](https://ipfs.io) of all files and dependencies, to backup
+dependencies in case they are ever inaccessible from GitHub or npm.
+
 ## Original Documentation:
 
 Extensive documentation available at:
