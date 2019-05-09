@@ -1,6 +1,20 @@
 # BITBOX SDK
+This is a pure JavaScript fork of
+the [BITBOX SDK](https://github.com/Bitcoin-com/bitbox-sdk) maintained
+by Bitcoin.com. It was forked 5/9/19. This fork of the repository will remove
+babel and typescript as dependencies, making the code base pure JavaScript.
+This removes the time-lag in compiling the library and also means that error messages
+will indicate the actual lines of code (helpful), rather than lines in the
+compiled output (less helpful).
 
-`bitbox-sdk` is a utility for creating great [Bitcoin Cash](https://www.bitcoincash.org) applications. It can be used from the command line or from within client/server apps.
+I created this fork because I think many JavaScript developers are unwilling to
+learn TypeScript, or simply hate compiled back-end apps. This repository is for
+these marginalized developers. This fork will be maintained by
+me ([Chris Troutner](https://memo.cash/profile/1NpYaazpQ26KrMTeFf66zVKy6x9KzcLgTA)) as
+a hobby. There will most likely be a big time lag when it comes to porting new
+features in BITBOX to this repository.
+
+## Original Documentation:
 
 Extensive documentation available at:
 
@@ -8,44 +22,3 @@ Extensive documentation available at:
 - [BITBOX Introduction](https://developer.bitcoin.com/bitbox)
 - [BITBOX API Reference](https://developer.bitcoin.com/bitbox/docs/getting-started)
 - [BITBOX Examples](./examples)
-
-Open Source / Creative Commons Listings
-
-- [assert](https://www.npmjs.com/package/assert) - MIT
-- [axios](https://github.com/axios/axios) - MIT
-- [babel](https://babeljs.io/docs/setup/) - MIT
-- [bigi](https://www.npmjs.com/package/bigi) - none
-- [bip21](https://github.com/bigearth/bip21) - ISC
-- [bip39](https://github.com/bitcoinjs/bip39/blob/master/LICENSE) - ISC
-- [bitcoincash-ops](https://github.com/bitcoin-com/bitcoincash-ops) - MIT
-- [bitcoinjs-lib](https://github.com/bigearth/bitcoinjs-lib) - MIT
-- [bitcoinjs-message](https://github.com/bitcoinjs/bitcoinjs-message) - MIT
-- [bs58](https://www.npmjs.com/package/bs58) - MIT
-- [buffer](https://www.npmjs.com/package/buffer) - MIT
-- [cashaddrjs](https://github.com/bitcoincashjs/cashaddrjs/blob/master/LICENSE) - MIT
-- [chai](https://www.npmjs.com/package/chai) - MIT
-- [chalk](https://www.npmjs.com/package/chalk) - MIT
-- [clear](https://www.npmjs.com/package/clear) - none
-- [commander](https://www.npmjs.com/package/commander) - MIT
-- [cp-file](https://www.npmjs.com/package/cp-file) - MIT
-- [ecurve](https://www.npmjs.com/package/ecurve) - MIT
-- [figlet](https://www.npmjs.com/package/figlet) - MIT
-- [git-clone](https://www.npmjs.com/package/git-clone) - ICS
-- [ini](https://www.npmjs.com/package/ini) - ICS
-- [mkdirp](https://www.npmjs.com/package/mkdirp) - MIT
-- [mocha](https://www.npmjs.com/package/mocha) - MIT
-- [node-cmd](https://www.npmjs.com/package/node-cmd) - DBAD
-- [node-emoji](https://www.npmjs.com/package/node-emoji) - MIT
-- [nyc](https://www.npmjs.com/package/nyc) - ICS
-- [qrcode](https://www.npmjs.com/package/qrcode) - MIT
-- [randombytes](https://www.npmjs.com/package/randombytes) - MIT
-- [safe-buffer](https://www.npmjs.com/package/safe-buffer) - MIT
-- [satoshi-bitcoin](https://www.npmjs.com/package/satoshi-bitcoin) - MIT
-- [sinon](https://www.npmjs.com/package/sinon) - BSD-3-Clause
-- [touch](https://www.npmjs.com/package/touch) - ISC
-
-## Font awesome
-
-[Cube icon](https://fontawesome.com/icons/cube?style=solid) available under [CC v4.0](https://creativecommons.org/licenses/by/4.0/)
-
-[More info](https://developer.bitcoin.com/bitbox.html)
