@@ -8,10 +8,11 @@ will indicate the actual lines of code (helpful), rather than lines in the
 compiled output (less helpful).
 
 I created this fork because I think many JavaScript developers are unwilling to
-learn TypeScript, or simply hate compiled back-end apps. This repository is for
+learn TypeScript, or simply hate compiled back-end apps like I do. This
+repository is for
 these marginalized developers. This fork will be maintained by
 me ([Chris Troutner](https://memo.cash/profile/1NpYaazpQ26KrMTeFf66zVKy6x9KzcLgTA)) as
-a hobby. There will most likely be a big time lag when it comes to porting new
+a hobby. There will most likely be a big lag when it comes to porting new
 features in BITBOX to this repository.
 
 ## Original Documentation:
