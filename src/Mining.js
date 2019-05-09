@@ -1,4 +1,5 @@
-import axios from "axios"
+const axios = require("axios")
+
 class Mining {
   constructor(restURL) {
     this.restURL = restURL
@@ -54,4 +55,4 @@ class Mining {
   }
 }
 
-export default Mining
+module.exports = Mining

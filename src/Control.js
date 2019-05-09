@@ -1,4 +1,4 @@
-import axios from "axios"
+const axios = require("axios")
 class Control {
   constructor(restURL) {
     this.restURL = restURL
@@ -36,4 +36,4 @@ class Control {
   // }
 }
 
-export default Control
+module.exports = Control

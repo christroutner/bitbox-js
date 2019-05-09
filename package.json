@@ -1,28 +1,19 @@
 {
-  "name": "bitbox-sdk",
-  "version": "6.1.1",
-  "description": "BITBOX SDK for Bitcoin Cash",
-  "author": "Gabriel Cardona <gabriel@bitcoin.com>",
+  "name": "bitbox-js",
+  "version": "1.0.0",
+  "description": "BITBOX JavaScript SDK for Bitcoin Cash",
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
   "contributors": [
-    "Chris Troutner <chris.troutner@gmail.com>"
+    "Gabriel Cardona <gabriel@bitcoin.com>"
   ],
-  "main": "lib/BITBOX",
-  "types": "./typings/BITBOX.d.ts",
+  "main": "src/BITBOX",
   "scripts": {
-    "test": "mocha --timeout 30000 --require babel-core/register test/unit",
-    "test:integration": "mocha --timeout 30000 --require babel-core/register test/integration",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "build": "babel src/ -d lib/",
-    "postbuild": "cp -R typings/* lib"
+    "test": "mocha --timeout 30000 test/unit",
+    "test:integration": "mocha --timeout 30000 test/integration",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=10.15.1"
-  },
-  "bin": {
-    "bitbox": "./index.js"
-  },
-  "homepage": "https://developer.bitcoin.com/bitbox",
+  "homepage": "https://github.com/christroutner/bitbox-sdk",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bitcoin-com/bitbox-javascript-sdk.git"
@@ -30,10 +21,6 @@
   "dependencies": {
     "assert": "^1.4.1",
     "axios": "^0.17.1",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0",
     "bc-bip68": "^1.0.5",
     "bch-wallet-bridge.js": "github:web3bch/bch-wallet-bridge.js#master",
     "bigi": "^1.4.2",

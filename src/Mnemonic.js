@@ -1,6 +1,6 @@
-import BIP39 from "bip39"
-import randomBytes from "randombytes"
-import Bitcoin from "bitcoincashjs-lib"
+const BIP39 = require("bip39")
+const randomBytes = require("randombytes")
+const Bitcoin = require("bitcoincashjs-lib")
 const Buffer = require("safe-buffer").Buffer
 const wif = require("wif")
 
@@ -30,14 +30,14 @@ class Mnemonic {
     // Check each word
     for (let i = 0; i < words.length; i++) {
       const word = words[i]
-      if (wordlist.indexOf(word) == -1) {
+      if (wordlist.indexOf(word) === -1) {
         // Finding closest match to word
         const nearestWord = this.findNearestWord(word, wordlist)
         return `${word} is not in wordlist, did you mean ${nearestWord}?`
       }
     }
     // Check the words are valid
-    const properPhrase = words.join()
+    //const properPhrase = words.join()
     const isValid = BIP39.validateMnemonic(mnemonic, wordlist)
     if (!isValid) return "Invalid mnemonic"
 
@@ -86,7 +86,7 @@ class Mnemonic {
     let closestWord = wordlist[0]
     for (let i = 0; i < wordlist.length; i++) {
       const comparedTo = wordlist[i]
-      if (comparedTo.indexOf(word) == 0) return comparedTo
+      if (comparedTo.indexOf(word) === 0) return comparedTo
 
       const distance = Levenshtein.get(word, comparedTo)
       if (distance < minDistance) {
@@ -98,7 +98,7 @@ class Mnemonic {
   }
 }
 
-export default Mnemonic
+module.exports = Mnemonic
 
 // The following code is from: https://raw.githubusercontent.com/iancoleman/bip39/7ff86d4c983f1e8c80b87b31acfd69fcf98c1b82/src/js/levenshtein.js
 
@@ -149,12 +149,8 @@ var Levenshtein = {
     if (str2.length === 0) return str1.length
 
     // two rows
-    let prevRow = new Array(str2.length + 1),
-      curCol,
-      nextCol,
-      i,
-      j,
-      tmp
+    const prevRow = new Array(str2.length + 1)
+    let curCol, nextCol, i, j, tmp
 
     // initialise previous row
     for (i = 0; i < prevRow.length; ++i) prevRow[i] = i
@@ -211,14 +207,8 @@ var Levenshtein = {
     if (str2.length === 0) return cb(null, str1.length)
 
     // two rows
-    let prevRow = new Array(str2.length + 1),
-      curCol,
-      nextCol,
-      i,
-      j,
-      tmp,
-      startTime,
-      currentTime
+    const prevRow = new Array(str2.length + 1)
+    let curCol, nextCol, i, j, tmp, startTime, currentTime
 
     // initialise previous row
     for (i = 0; i < prevRow.length; ++i) prevRow[i] = i

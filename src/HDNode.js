@@ -1,6 +1,6 @@
-import Bitcoin from "bitcoincashjs-lib"
-import coininfo from "coininfo"
-import bip32utils from "bip32-utils"
+const Bitcoin = require("bitcoincashjs-lib")
+const coininfo = require("coininfo")
+const bip32utils = require("bip32-utils")
 
 class HDNode {
   constructor(address) {
@@ -114,4 +114,4 @@ class HDNode {
   }
 }
 
-export default HDNode
+module.exports = HDNode

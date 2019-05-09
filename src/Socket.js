@@ -1,4 +1,4 @@
-import io from "socket.io-client"
+const io = require("socket.io-client")
 
 class Socket {
   constructor(config = {}) {
@@ -26,4 +26,4 @@ class Socket {
   }
 }
 
-export default Socket
+module.exports = Socket

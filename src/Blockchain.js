@@ -3,7 +3,8 @@
   - Add blockhash functionality back into getTxOutProof
 */
 
-import axios from "axios"
+const axios = require("axios")
+
 class Blockchain {
   constructor(restURL) {
     this.restURL = restURL
@@ -325,4 +326,4 @@ class Blockchain {
   }
 }
 
-export default Blockchain
+module.exports = Blockchain

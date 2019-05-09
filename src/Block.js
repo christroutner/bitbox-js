@@ -1,4 +1,4 @@
-import axios from "axios"
+const axios = require("axios")
 class Block {
   constructor(restURL) {
     this.restURL = restURL
@@ -43,7 +43,7 @@ class Block {
         )
         return response.data
 
-      // Array of hashes.
+        // Array of hashes.
       } else if (Array.isArray(hash)) {
         const options = {
           method: "POST",
@@ -65,4 +65,4 @@ class Block {
   }
 }
 
-export default Block
+module.exports = Block
