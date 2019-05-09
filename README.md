@@ -2,7 +2,8 @@
 This is a pure JavaScript fork of
 the [BITBOX SDK](https://github.com/Bitcoin-com/bitbox-sdk) maintained
 by Bitcoin.com. It was forked 5/9/19. This fork removes bable, typescript, and
-flow as dependencies. The code base is pure JavaScript, tested against node.js v10+
+flow as dependencies. The code base is pure JavaScript, tested against
+[node.js v10 LTS](https://nodejs.org/en/).
 This removes the time-lag in compiling the library and also means that error messages
 will indicate the actual lines of code (helpful), rather than lines in the
 compiled output (less helpful).
@@ -44,6 +45,6 @@ dependencies in the `node_modules` folder. This ensures working copies of this
 repository can be retrieved in case there is any drift in dependency files, or
 if dependencies are pulled from npm or GitHub.
 
-- Initial release on 5/9/2019
-  - without node_modules folder: [QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG](ipfs://QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG) (4 MB)
-  - with node_modules folder: [QmXq9Ds6Qdkg9xbRhcF8pay9KabA6QN2y7bx3wvSqiXifk](ipfs://QmXq9Ds6Qdkg9xbRhcF8pay9KabA6QN2y7bx3wvSqiXifk) (107 MB)
+- Initial fork on 5/9/2019
+  - without node_modules folder: QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG (4 MB)
+  - with node_modules folder: QmXq9Ds6Qdkg9xbRhcF8pay9KabA6QN2y7bx3wvSqiXifk (107 MB)
