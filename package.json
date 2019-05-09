@@ -1,28 +1,19 @@
 {
-  "name": "bitbox-sdk",
+  "name": "bitbox-js",
   "version": "6.1.1",
-  "description": "BITBOX SDK for Bitcoin Cash",
-  "author": "Gabriel Cardona <gabriel@bitcoin.com>",
+  "description": "BITBOX JavaScript SDK for Bitcoin Cash",
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
   "contributors": [
-    "Chris Troutner <chris.troutner@gmail.com>"
+    "Gabriel Cardona <gabriel@bitcoin.com>"
   ],
-  "main": "lib/BITBOX",
-  "types": "./typings/BITBOX.d.ts",
+  "main": "src/BITBOX",
   "scripts": {
     "test": "mocha --timeout 30000 --require babel-core/register test/unit",
     "test:integration": "mocha --timeout 30000 --require babel-core/register test/integration",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "build": "babel src/ -d lib/",
-    "postbuild": "cp -R typings/* lib"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=10.15.1"
-  },
-  "bin": {
-    "bitbox": "./index.js"
-  },
-  "homepage": "https://developer.bitcoin.com/bitbox",
+  "homepage": "https://github.com/christroutner/bitbox-sdk",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bitcoin-com/bitbox-javascript-sdk.git"
