@@ -45,6 +45,10 @@ dependencies in the `node_modules` folder. This ensures working copies of this
 repository can be retrieved in case there is any drift in dependency files, or
 if dependencies are pulled from npm or GitHub.
 
-- Initial fork on 5/9/2019
+- Initial fork on 5/9/2019:
   - without node_modules folder: QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG (4 MB)
   - with node_modules folder: QmXq9Ds6Qdkg9xbRhcF8pay9KabA6QN2y7bx3wvSqiXifk (107 MB)
+
+- v7.0.0 - refactored to pure JavaScript:
+  - without node_modules folder: QmNjFsiTZRMAUa9rZpXqZqivv9JLaNicwLSPHjyLB7PVDk (1 MB)
+  - with node_modules folder: Qma9ScApwBtuL7dpdSk7jpBFTxbqRdiR921WjyP75SU7bT (100 MB)

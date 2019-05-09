@@ -16,7 +16,7 @@
   "homepage": "https://github.com/christroutner/bitbox-sdk",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bitcoin-com/bitbox-javascript-sdk.git"
+    "url": "git+https://github.com/christroutner/bitbox-sdk.git"
   },
   "dependencies": {
     "assert": "^1.4.1",
