@@ -23,3 +23,13 @@ Extensive documentation available at:
 - [BITBOX Introduction](https://developer.bitcoin.com/bitbox)
 - [BITBOX API Reference](https://developer.bitcoin.com/bitbox/docs/getting-started)
 - [BITBOX Examples](./examples)
+
+## IPFS Releases
+
+I will periodically publish IPFS releases of this repository, including all
+dependencies in the `node_modules` folder. This ensures working copies of this
+repository can be retrieved in case there is any drift in dependency files.
+
+- Initial release on 5/9/2019
+  - without node_modules folder: [QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG](ipfs://QmQFHfbBQdEHfhtiRLbXtX1NcgnfL45hZb7TbQimTXAuzG) (4 MB)
+  - with node_modules folder: [QmXq9Ds6Qdkg9xbRhcF8pay9KabA6QN2y7bx3wvSqiXifk](ipfs://QmXq9Ds6Qdkg9xbRhcF8pay9KabA6QN2y7bx3wvSqiXifk) (107 MB)
