@@ -52,8 +52,8 @@ class Mnemonic {
     return BIP39.wordlists
   }
 
-  toKeypairs(mnemonic, numberOfKeypairs = 1, regtest = false) {
-    const rootSeedBuffer = this.toSeed(mnemonic, "")
+  async toKeypairs(mnemonic, numberOfKeypairs = 1, regtest = false) {
+    const rootSeedBuffer = await this.toSeed(mnemonic, "")
     const hdNode = Bitcoin.HDNode.fromSeedBuffer(rootSeedBuffer)
     const HDPath = `44'/145'/0'/0/`
 
