@@ -1,4 +1,7 @@
 # BITBOX JS
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/christroutner/bitbox-js.svg)](https://greenkeeper.io/)
+
 This is a pure JavaScript fork of
 the [BITBOX SDK](https://github.com/Bitcoin-com/bitbox-sdk) maintained
 by Bitcoin.com. It was forked 5/9/19. This fork removes bable, typescript, and

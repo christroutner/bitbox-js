@@ -7,8 +7,8 @@ const Buffer = require("safe-buffer").Buffer
 describe("#HDNode", () => {
   describe("#fromSeed", () => {
     fixtures.fromSeed.forEach(mnemonic => {
-      it(`should create an HDNode from root seed buffer`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic)
+      it(`should create an HDNode from root seed buffer`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         assert.notEqual(hdNode, null)
       })
@@ -17,8 +17,8 @@ describe("#HDNode", () => {
 
   describe("#derive", () => {
     fixtures.derive.forEach(derive => {
-      it(`should derive non hardened child HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(derive.mnemonic)
+      it(`should derive non hardened child HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(derive.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const childHDNode = BITBOX.HDNode.derive(hdNode, 0)
         assert.equal(BITBOX.HDNode.toXPub(childHDNode), derive.xpub)
@@ -29,8 +29,8 @@ describe("#HDNode", () => {
 
   describe("#deriveHardened", () => {
     fixtures.deriveHardened.forEach(derive => {
-      it(`should derive hardened child HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(derive.mnemonic)
+      it(`should derive hardened child HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(derive.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const childHDNode = BITBOX.HDNode.deriveHardened(hdNode, 0)
         assert.equal(BITBOX.HDNode.toXPub(childHDNode), derive.xpub)
@@ -40,8 +40,8 @@ describe("#HDNode", () => {
 
     describe("derive BIP44 $BCH account", () => {
       fixtures.deriveBIP44.forEach(derive => {
-        it(`should derive BIP44 $BCH account`, () => {
-          const rootSeedBuffer = BITBOX.Mnemonic.toSeed(derive.mnemonic)
+        it(`should derive BIP44 $BCH account`, async () => {
+          const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(derive.mnemonic)
           const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
           const purpose = BITBOX.HDNode.deriveHardened(hdNode, 44)
           const coin = BITBOX.HDNode.deriveHardened(purpose, 145)
@@ -56,8 +56,8 @@ describe("#HDNode", () => {
   describe("#derivePath", () => {
     describe("derive non hardened Path", () => {
       fixtures.derivePath.forEach(derive => {
-        it(`should derive non hardened child HDNode from path`, () => {
-          const rootSeedBuffer = BITBOX.Mnemonic.toSeed(derive.mnemonic)
+        it(`should derive non hardened child HDNode from path`, async () => {
+          const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(derive.mnemonic)
           const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
           const childHDNode = BITBOX.HDNode.derivePath(hdNode, "0")
           assert.equal(BITBOX.HDNode.toXPub(childHDNode), derive.xpub)
@@ -68,8 +68,8 @@ describe("#HDNode", () => {
 
     describe("derive hardened Path", () => {
       fixtures.deriveHardenedPath.forEach(derive => {
-        it(`should derive hardened child HDNode from path`, () => {
-          const rootSeedBuffer = BITBOX.Mnemonic.toSeed(derive.mnemonic)
+        it(`should derive hardened child HDNode from path`, async () => {
+          const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(derive.mnemonic)
           const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
           const childHDNode = BITBOX.HDNode.derivePath(hdNode, "0'")
           assert.equal(BITBOX.HDNode.toXPub(childHDNode), derive.xpub)
@@ -80,8 +80,8 @@ describe("#HDNode", () => {
 
     describe("derive BIP44 $BCH account", () => {
       fixtures.deriveBIP44.forEach(derive => {
-        it(`should derive BIP44 $BCH account`, () => {
-          const rootSeedBuffer = BITBOX.Mnemonic.toSeed(derive.mnemonic)
+        it(`should derive BIP44 $BCH account`, async () => {
+          const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(derive.mnemonic)
           const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
           const childHDNode = BITBOX.HDNode.derivePath(hdNode, "44'/145'/0'")
           assert.equal(BITBOX.HDNode.toXPub(childHDNode), derive.xpub)
@@ -93,8 +93,8 @@ describe("#HDNode", () => {
 
   describe("#toLegacyAddress", () => {
     fixtures.toLegacyAddress.forEach(fixture => {
-      it(`should get address ${fixture.address} from HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      it(`should get address ${fixture.address} from HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const childHDNode = BITBOX.HDNode.derivePath(hdNode, "0")
         const addy = BITBOX.HDNode.toLegacyAddress(childHDNode)
@@ -105,16 +105,18 @@ describe("#HDNode", () => {
 
   describe("#toCashAddress", () => {
     fixtures.toCashAddress.forEach(fixture => {
-      it(`should get address ${fixture.address} from HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      it(`should get address ${fixture.address} from HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const childHDNode = BITBOX.HDNode.derivePath(hdNode, "0")
         const addy = BITBOX.HDNode.toCashAddress(childHDNode)
         assert.equal(addy, fixture.address)
       })
 
-      it(`should get address ${fixture.regtestAddress} from HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      it(`should get address ${
+        fixture.regtestAddress
+      } from HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const childHDNode = BITBOX.HDNode.derivePath(hdNode, "0")
         const addr = BITBOX.HDNode.toCashAddress(childHDNode, true)
@@ -136,8 +138,8 @@ describe("#HDNode", () => {
 
   describe("#toXPub", () => {
     fixtures.toXPub.forEach(fixture => {
-      it(`should create xpub ${fixture.xpub} from an HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      it(`should create xpub ${fixture.xpub} from an HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const xpub = BITBOX.HDNode.toXPub(hdNode)
         assert.equal(xpub, fixture.xpub)
@@ -147,8 +149,8 @@ describe("#HDNode", () => {
 
   describe("#toXPriv", () => {
     fixtures.toXPriv.forEach(fixture => {
-      it(`should create xpriv ${fixture.xpriv} from an HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      it(`should create xpriv ${fixture.xpriv} from an HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const xpriv = BITBOX.HDNode.toXPriv(hdNode)
         assert.equal(xpriv, fixture.xpriv)
@@ -158,8 +160,8 @@ describe("#HDNode", () => {
 
   describe("#toKeyPair", () => {
     fixtures.toKeyPair.forEach(fixture => {
-      it(`should get ECPair from an HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      it(`should get ECPair from an HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const keyPair = BITBOX.HDNode.toKeyPair(hdNode)
         assert.equal(typeof keyPair, "object")
@@ -169,8 +171,8 @@ describe("#HDNode", () => {
 
   describe("#toPublicKey", () => {
     fixtures.toPublicKey.forEach(fixture => {
-      it(`should create public key buffer from an HDNode`, () => {
-        const rootSeedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      it(`should create public key buffer from an HDNode`, async () => {
+        const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
         const hdNode = BITBOX.HDNode.fromSeed(rootSeedBuffer)
         const publicKeyBuffer = BITBOX.HDNode.toPublicKey(hdNode)
         assert.equal(typeof publicKeyBuffer, "object")
@@ -244,8 +246,9 @@ describe("#HDNode", () => {
 
   describe("#bip32", () => {
     describe("create accounts and addresses", () => {
-      fixtures.accounts.forEach(fixture => {
-        const seedBuffer = BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+      fixtures.accounts.forEach(async fixture => {
+        const seedBuffer = await BITBOX.Mnemonic.toSeed(fixture.mnemonic)
+        console.log(`seedBuffer: ${seedBuffer.toString()}`)
         const hdNode = BITBOX.HDNode.fromSeed(seedBuffer)
         const a = BITBOX.HDNode.derivePath(hdNode, "0'")
         const external = BITBOX.HDNode.derivePath(a, "0")
