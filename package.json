@@ -8,7 +8,7 @@
   ],
   "main": "src/BITBOX",
   "scripts": {
-    "test": "mocha --timeout 30000 test/unit",
+    "test": "nyc mocha --timeout 30000 test/unit",
     "test:integration": "mocha --timeout 30000 test/integration",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
