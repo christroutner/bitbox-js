@@ -91,10 +91,19 @@ class BitcoinCash {
 
   // encode bip21 url
   encodeBIP21(address, options, regtest = false) {
-    return bip21.encode(
-      this._address.toCashAddress(address, true, regtest),
-      options
-    )
+    let addressFormat = this._address.isCashAddress(address)
+    console.log("AddressFormat: ", addressFormat);
+    if (addressFormat === true) {
+      return bip21.encode(
+        this._address.toCashAddress(address, true, regtest),
+        options
+      )
+    } else {
+      return bip21.encode(
+        this._address.toLegacyAddress(address, true, regtest),
+        options
+      )
+    }
   }
 
   // decode bip21 url
