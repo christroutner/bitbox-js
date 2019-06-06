@@ -225,33 +225,33 @@ describe("#Mnemonic", () => {
   })
 
   describe("#toSeed", () => {
-    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 128 bit mnemonic", () => {
+    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 128 bit mnemonic", async () => {
       const mnemonic = BITBOX.Mnemonic.generate(128)
-      const rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic, "")
+      const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(mnemonic, "")
       assert.equal(rootSeedBuffer.byteLength, 64)
     })
 
-    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 160 bit mnemonic", () => {
+    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 160 bit mnemonic", async () => {
       const mnemonic = BITBOX.Mnemonic.generate(160)
-      const rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic, "")
+      const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(mnemonic, "")
       assert.equal(rootSeedBuffer.byteLength, 64)
     })
 
-    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 192 bit mnemonic", () => {
+    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 192 bit mnemonic", async () => {
       const mnemonic = BITBOX.Mnemonic.generate(192)
-      const rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic, "")
+      const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(mnemonic, "")
       assert.equal(rootSeedBuffer.byteLength, 64)
     })
 
-    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 224 bit mnemonic", () => {
+    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 224 bit mnemonic", async () => {
       const mnemonic = BITBOX.Mnemonic.generate(224)
-      const rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic, "")
+      const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(mnemonic, "")
       assert.equal(rootSeedBuffer.byteLength, 64)
     })
 
-    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 256 bit mnemonic", () => {
+    it("should create 512 bit / 64 byte HMAC-SHA512 root seed from a 256 bit mnemonic", async () => {
       const mnemonic = BITBOX.Mnemonic.generate(256)
-      const rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic, "")
+      const rootSeedBuffer = await BITBOX.Mnemonic.toSeed(mnemonic, "")
       assert.equal(rootSeedBuffer.byteLength, 64)
     })
   })
@@ -290,9 +290,9 @@ describe("#Mnemonic", () => {
     })
   })
 
-  describe("#toKeypairs", () => {
-    fixtures.toKeypairs.forEach((fixture, i) => {
-      const keypairs = BITBOX.Mnemonic.toKeypairs(fixture.mnemonic, 5)
+  describe("#toKeypairs", async () => {
+    fixtures.toKeypairs.forEach(async (fixture, i) => {
+      const keypairs = await BITBOX.Mnemonic.toKeypairs(fixture.mnemonic, 5)
       keypairs.forEach((keypair, j) => {
         it(`Generate keypair from mnemonic`, () => {
           assert.equal(
@@ -306,7 +306,7 @@ describe("#Mnemonic", () => {
         })
       })
 
-      const regtestKeypairs = BITBOX.Mnemonic.toKeypairs(
+      const regtestKeypairs = await BITBOX.Mnemonic.toKeypairs(
         fixture.mnemonic,
         5,
         true

@@ -15,14 +15,13 @@ class Block {
 
         // Array of blocks.
       } else if (Array.isArray(id)) {
-        const options = {
-          method: "POST",
-          url: `${this.restURL}block/detailsByHeight`,
-          data: {
+        // Dev note: must use axios.post for unit test stubbing.
+        const response = await axios.post(
+          `${this.restURL}block/detailsByHeight`,
+          {
             heights: id
           }
-        }
-        const response = await axios(options)
+        )
 
         return response.data
       }
@@ -45,14 +44,13 @@ class Block {
 
         // Array of hashes.
       } else if (Array.isArray(hash)) {
-        const options = {
-          method: "POST",
-          url: `${this.restURL}block/detailsByHash`,
-          data: {
-            hashes: hash
+        // Dev note: must use axios.post for unit test stubbing.
+        const response = await axios.post(
+          `${this.restURL}block/detailsByHash`,
+          {
+            heights: hash
           }
-        }
-        const response = await axios(options)
+        )
 
         return response.data
       }
