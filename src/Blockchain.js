@@ -84,15 +84,14 @@ class Blockchain {
 
         // Handle array of hashes.
       } else if (Array.isArray(hash)) {
-        const options = {
-          method: "POST",
-          url: `${this.restURL}blockchain/getBlockHeader`,
-          data: {
+        // Dev note: must use axios.post for unit test stubbing.
+        const response = await axios.post(
+          `${this.restURL}blockchain/getBlockHeader`,
+          {
             hashes: hash,
             verbose: verbose
           }
-        }
-        const response = await axios(options)
+        )
 
         return response.data
       }
@@ -169,14 +168,13 @@ class Blockchain {
 
         return response.data
       } else if (Array.isArray(txid)) {
-        const options = {
-          method: "POST",
-          url: `${this.restURL}blockchain/getMempoolEntry`,
-          data: {
+        // Dev note: must use axios.post for unit test stubbing.
+        const response = await axios.post(
+          `${this.restURL}blockchain/getMempoolEntry`,
+          {
             txids: txid
           }
-        }
-        const response = await axios(options)
+        )
 
         return response.data
       }
@@ -238,14 +236,13 @@ class Blockchain {
 
         // Array of txids.
       } else if (Array.isArray(txids)) {
-        const options = {
-          method: "POST",
-          url: `${this.restURL}blockchain/getTxOutProof`,
-          data: {
-            txids: txids
+        // Dev note: must use axios.post for unit test stubbing.
+        const response = await axios.post(
+          `${this.restURL}blockchain/getTxOutProof`,
+          {
+            txids: txid
           }
-        }
-        const response = await axios(options)
+        )
 
         return response.data
       }
@@ -306,14 +303,13 @@ class Blockchain {
 
         // Array of hashes.
       } else if (Array.isArray(proof)) {
-        const options = {
-          method: "POST",
-          url: `${this.restURL}blockchain/verifyTxOutProof`,
-          data: {
+        // Dev note: must use axios.post for unit test stubbing.
+        const response = await axios.post(
+          `${this.restURL}blockchain/verifyTxOutProof`,
+          {
             proofs: proof
           }
-        }
-        const response = await axios(options)
+        )
 
         return response.data
       }

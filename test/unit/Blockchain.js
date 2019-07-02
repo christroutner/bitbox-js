@@ -7,7 +7,7 @@ const sinon = require("sinon")
 describe("#Blockchain", () => {
   describe("#getBestBlockHash", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
 
     it("should get best block hash", done => {
@@ -31,7 +31,7 @@ describe("#Blockchain", () => {
 
   describe("#getBlock", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       hash: "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09",
@@ -72,7 +72,7 @@ describe("#Blockchain", () => {
 
   describe("#getBlockchainInfo", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       chain: "main",
@@ -115,7 +115,7 @@ describe("#Blockchain", () => {
 
   describe("#getBlockCount", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = 527810
 
@@ -133,7 +133,7 @@ describe("#Blockchain", () => {
 
   describe("#getBlockHash", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data =
       "000000000000000001d127592d091d4c45062504663c9acab27a1b16c028e3c0"
@@ -152,7 +152,7 @@ describe("#Blockchain", () => {
 
   describe("#getBlockHeader", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       hash: "000000000000000001d127592d091d4c45062504663c9acab27a1b16c028e3c0",
@@ -190,7 +190,7 @@ describe("#Blockchain", () => {
 
   describe("#getDifficulty", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = "577528469277.1339"
 
@@ -208,7 +208,7 @@ describe("#Blockchain", () => {
 
   describe("#getMempoolAncestors", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = "Transaction not in mempool"
 
@@ -229,7 +229,7 @@ describe("#Blockchain", () => {
 
   describe("#getMempoolDescendants", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       result: "Transaction not in mempool"
@@ -252,7 +252,7 @@ describe("#Blockchain", () => {
 
   describe("#getMempoolEntry", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       result: "Transaction not in mempool"
@@ -274,7 +274,7 @@ describe("#Blockchain", () => {
 
   describe("#getMempoolInfo", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       result: {
@@ -300,7 +300,7 @@ describe("#Blockchain", () => {
 
   describe("#getRawMempool", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       result: {
@@ -342,7 +342,7 @@ describe("#Blockchain", () => {
   describe("#getTxOut", () => {
     // TODO finish this test
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       result: {}
@@ -367,7 +367,7 @@ describe("#Blockchain", () => {
   describe("#preciousBlock", () => {
     // TODO finish this test
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = {
       result: {}
@@ -387,7 +387,7 @@ describe("#Blockchain", () => {
 
   describe("#pruneBlockchain", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = "Cannot prune blocks because node is not in prune mode."
 
@@ -405,7 +405,7 @@ describe("#Blockchain", () => {
 
   describe("#verifyChain", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = true
 
@@ -423,7 +423,7 @@ describe("#Blockchain", () => {
 
   describe("#verifyTxOutProof", () => {
     let sandbox
-    beforeEach(() => (sandbox = sinon.sandbox.create()))
+    beforeEach(() => (sandbox = sinon.createSandbox()))
     afterEach(() => sandbox.restore())
     const data = "proof must be hexadecimal string (not '')"
 
