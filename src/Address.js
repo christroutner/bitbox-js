@@ -303,13 +303,13 @@ class Address {
       // Handle single address.
       if (typeof address === "string") {
         const response = await axios.get(
-          `${this.restURL}address/utxo/${address}`
+          `${this.restURL}address/details/${address}`
         )
         return response.data
       } else if (Array.isArray(address)) {
         const options = {
           method: "POST",
-          url: `${this.restURL}address/utxo`,
+          url: `${this.restURL}address/details`,
           data: {
             addresses: address
           }
