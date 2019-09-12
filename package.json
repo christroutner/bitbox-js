@@ -27,7 +27,7 @@
     "bip-schnorr": "^0.3.0",
     "bip21": "Bitcoin-com/bip21",
     "bip32-utils": "Bitcoin-com/bip32-utils#0.13.1",
-    "bip38": "^2.0.2",
+    "bip38": "^3.0.0",
     "bip39": "^3.0.2",
     "bip66": "^1.1.5",
     "bitcoincash-ops": "christroutner/bitcoincash-ops",
