@@ -70,7 +70,7 @@
     "node-mocks-http": "^1.7.0",
     "nyc": "^14.1.0",
     "prettier": "^1.14.2",
-    "semantic-release": "^15.13.13",
+    "semantic-release": "^17.0.4",
     "sinon": "^7.3.2"
   }
 }
