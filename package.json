@@ -71,6 +71,6 @@
     "nyc": "^14.1.0",
     "prettier": "^1.14.2",
     "semantic-release": "^15.13.13",
-    "sinon": "^7.3.2"
+    "sinon": "^9.0.1"
   }
 }
