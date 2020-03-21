@@ -69,7 +69,7 @@
     "nock": "^10.0.6",
     "node-mocks-http": "^1.7.0",
     "nyc": "^14.1.0",
-    "prettier": "^1.14.2",
+    "prettier": "^2.0.0",
     "semantic-release": "^15.13.13",
     "sinon": "^7.3.2"
   }
